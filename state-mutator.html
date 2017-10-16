@@ -46,5 +46,30 @@ limitations under the License.
         }
 
       };
+
+      setState(path, value) {
+        this.application.element.set("state." + path, value);
+      }
+
+      pushState(path, ...items) {
+        this.application.element.push("state." + path, items);
+      }
+
+      popState(path) {
+        return this.application.element.pop("state." + path);
+      }
+
+      unShiftState(path, ...items) {
+        this.application.element.unShift("state." + path);
+      }
+
+      shiftState(path) {
+        this.application.element.shift("state." + path);
+      }
+
+      spliceState(path, index, rmeoveCount, ...items) {
+        this.application.element.splice("state." + path, index, removeCount, items);
+      }
+
     });
 </script>

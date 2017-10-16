@@ -153,5 +153,8 @@ limitations under the License.
         return this.get('application.element');
       }
 
+      getState(path) {
+        return path ? this.get('application.element.state.' + path) : this.get('application.element.state');
+      }
     });
 </script>
